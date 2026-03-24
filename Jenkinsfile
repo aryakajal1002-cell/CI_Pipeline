@@ -2,15 +2,16 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
-                git 'https://github.com/aryakajal1002-cell/CI_Pipeline.git'
+                git branch: 'main', url: 'https://github.com/aryakajal1002-cell/CI_Pipeline.git'
             }
         }
 
         stage('Build') {
             steps {
-                echo 'Building project from GitHub...'
+                echo 'Building the project...'
             }
         }
 
@@ -25,5 +26,6 @@ pipeline {
                 echo 'Deploying application...'
             }
         }
+
     }
 }
