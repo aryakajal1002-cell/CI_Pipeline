@@ -22,6 +22,7 @@ pipeline {
                 stage('PythonService') {
                     steps {
                         echo 'Building Python Service'
+                        sh 'exit 1'   // example failure
                     }
                 }
 
