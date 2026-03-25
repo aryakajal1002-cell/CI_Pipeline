@@ -33,7 +33,7 @@ pipeline {
 
                 stage('UIService') {
                     steps {
-                        echo 'Building UI Service'
+                        echo 'B     uilding  UI Service'
                     }
                 }
 
@@ -42,7 +42,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application'
+                echo 'Deploying application  '
             }
         }
 
