@@ -1,0 +1,44 @@
+// Jenkins Pipeline to demonstrate Continuous Integration
+// This file triggers build stages when Jenkins detects changes in the repository
+
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Fetching code from GitHub repository...'
+                git branch: 'main', url: 'https://github.com/aryakajal1002-cell/CI_Pipeline.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the application...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running test cases...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            echo 'Pipeline execution failed!'
+        }
+    }
+}
