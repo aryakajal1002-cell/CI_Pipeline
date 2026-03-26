@@ -21,8 +21,9 @@ pipeline {
 
                 stage('PythonService') {
                     steps {
-                        echo 'Building Python Service'
-                        sh 'exit 1'   // example failure
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            echo "Running Python Service"
+                            bat 'exit 1'
                     }
                 }
 
