@@ -24,6 +24,7 @@ pipeline {
                         catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                             echo "Running Python Service"
                             bat 'exit 1'
+                        }
                     }
                 }
 
