@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Fetching c  ode from repo ci pipeline'
+                echo 'Fetching code from repo ci pipeline for demo'
             }
         }
 
